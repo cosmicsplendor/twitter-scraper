@@ -24,6 +24,7 @@ const createBrowser = async ({ headless = true, ignoreHTTPSErrors = true, window
         return browser
     } catch (e) {
         console.log("Encountered an error while launching the browser")
+        console.log(e)
         process.exit(1)
     }
 }

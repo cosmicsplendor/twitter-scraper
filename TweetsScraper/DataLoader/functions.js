@@ -41,7 +41,7 @@ const userBaseUrl = "https://twitter.com/i/api/graphql/Bhlf1dYJ3bYCKmLfeEQ31A/Us
 const getTweetsBaseUrl = apiId => `https://twitter.com/i/api/graphql/${apiId}/UserTweets`
 const getTweetsVariables = userId => ({
     "userId": userId,
-    "count": 20,
+    "count": 60,
     "includePromotedContent": false,
     "withQuickPromoteEligibilityTweetFields": false,
     "withVoice": true,
