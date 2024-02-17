@@ -57,6 +57,7 @@ const generateAccounts = async () => {
         })
     console.log(`Saving ${accounts.length} accounts`)
     await fs.writeFile("./accounts.json", JSON.stringify(accounts, undefined, 2))
+    await fs.writeFile("./accounts.lean.json", JSON.stringify(accounts.map(account => account.username)))
 }
 
 generateAccounts()
