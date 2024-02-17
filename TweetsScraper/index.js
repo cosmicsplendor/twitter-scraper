@@ -15,7 +15,8 @@ class TweetsScraper {
             console.log("Resetting the browser")
             if (this.browser !== null) this.browser.close()
             this.browser = await createBrowser({ 
-                headless: "new"
+                headless: "new",
+                noSandbox: true
             })
             const tempPage = await createLeanPage(
                 this.browser, [ "script" ]
