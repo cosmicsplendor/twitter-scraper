@@ -22,10 +22,12 @@ tweetsScraper
                     continue
                 }
                 console.log(`[${user.username}]`)
-                const following = await tweetsScraper.scrape(user.username, 50)
-                console.log(`[${user.username}] saving tweets`)
-                await fs.writeFile(savePath, JSON.stringify(following))
-                await wait(25)
+                const tweets = await tweetsScraper.scrape(user.username, 50)
+                if (tweets.length > 0) {
+                    console.log(`[${user.username}] saving tweets`)
+                    await fs.writeFile(savePath, JSON.stringify(tweets))
+                    await wait(25)
+                }
                 console.log(`Scraped ${n} out of ${source.length} profiles`)
             } catch(e) {
                 console.log(`Error: ${e.message}`)

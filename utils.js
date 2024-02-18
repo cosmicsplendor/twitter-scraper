@@ -148,6 +148,7 @@ const enumerateFiles = async rootDir => {
     const nestedFiles = flatten(await Promise.all(directories.map(dir => enumerateFiles(dir))))
     return allFiles.concat(nestedFiles)
 }
+
 module.exports = {
     createBrowser,
     wait,
@@ -160,5 +161,6 @@ module.exports = {
     ensureDirExists,
     parseArgv,
     rand, pickOne,
-    fileExists
+    fileExists,
+    enumerateFiles
 }
